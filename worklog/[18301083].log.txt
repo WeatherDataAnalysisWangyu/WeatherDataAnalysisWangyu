@@ -1,0 +1,4 @@
+1. Understand how to commit and add files by git and github with visual studio code;
+2. Have a basic understanding of Python and Pycharm;
+3. Python environment installation configuration;
+4. Java environment installation configuration;
