@@ -1,0 +1,7 @@
+使用git将本地仓库推送到远程仓库
+遇到的问题：error: failed to push some refs  to 'github.com :WeatherDataAnalysisWangyu/Weather
+                    fatal: refusing to merge unrelated histories
+解决error:问题是其他组员更新了远程仓库，需要先pull再push
+解决fatal:添加git pull origin master --allow-unrelated-histories这行代码
+安装配置python和pycharm
+此时心情一言难尽
