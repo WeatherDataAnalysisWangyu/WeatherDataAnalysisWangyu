@@ -1,7 +1,15 @@
+6.30 上午
 使用git将本地仓库推送到远程仓库
 遇到的问题：error: failed to push some refs  to 'github.com :WeatherDataAnalysisWangyu/Weather
                     fatal: refusing to merge unrelated histories
 解决error:问题是其他组员更新了远程仓库，需要先pull再push
 解决fatal:添加git pull origin master --allow-unrelated-histories这行代码
 安装配置python和pycharm
-此时心情一言难尽
+之前有jdk1.8
+6.30 下午
+安装配置spark和hadoop
+遇到问题jdk用的之前的配置的环境变量不对
+重新安装配置jdk
+下载气象数据
+安装数据分析相关的依赖包
+尝试配置虚拟机（未成功）
