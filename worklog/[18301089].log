@@ -6,10 +6,19 @@
 解决fatal:添加git pull origin master --allow-unrelated-histories这行代码
 安装配置python和pycharm
 之前有jdk1.8
-6.30 下午
+6.30 下午和晚上
 安装配置spark和hadoop
 遇到问题jdk用的之前的配置的环境变量不对
 重新安装配置jdk
 下载气象数据
 安装数据分析相关的依赖包
 尝试配置虚拟机（未成功）
+7.1 上午
+继续配置虚拟机（依旧失败）
+遇到问题安装VMware提示您的系统尚未修改
+解决方法：不知道调整了些什么，突然好使了
+7.1 下午
+配置虚拟机
+遇到问题：提示“Intel VT-x处于禁用状态”
+解决方法：要进入Win10的BIOS，先进入“设置”页面。打开“Windows设置”页面后，点击“更新和安全”，点击“恢复”，在右边出现栏目中“高级启动”标签下有一个按钮“立即重新启动”，选择“疑难解答”，选择“高级选项”选择“UEFI固件设置”，这时进入了UEFI固件设置界面，选择“Security”，选择"Virtualization"，选中“Intel （R）Virtualization Technology”,设为启用“Enabled”。
+小组重新任务规划，我负责前端设计，学习javaspring（晚上继续）
