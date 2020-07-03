@@ -22,3 +22,8 @@
 遇到问题：提示“Intel VT-x处于禁用状态”
 解决方法：要进入Win10的BIOS，先进入“设置”页面。打开“Windows设置”页面后，点击“更新和安全”，点击“恢复”，在右边出现栏目中“高级启动”标签下有一个按钮“立即重新启动”，选择“疑难解答”，选择“高级选项”选择“UEFI固件设置”，这时进入了UEFI固件设置界面，选择“Security”，选择"Virtualization"，选中“Intel （R）Virtualization Technology”,设为启用“Enabled”。
 小组重新任务规划，我负责前端设计，学习javaspring（晚上继续）
+7.2 上午
+放弃学习Javaspring,改学HTML5和CSS3
+7.2 下午
+继续学习HTML5和CSS3，配置了sublime
+（晚上继续）

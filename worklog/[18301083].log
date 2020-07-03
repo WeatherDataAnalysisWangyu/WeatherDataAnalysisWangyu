@@ -1,4 +1,25 @@
-1. Understand how to commit and add files by git and github with visual studio code;
-2. Have a basic understanding of Python and Pycharm;
-3. Python environment installation configuration;
-4. Java environment installation configuration;
+6.30工作日志
+ 1. Understand how to commit and add files by git and github with visual studio code;
+ 2. Have a basic understanding of Python and Pycharm;
+ 3. Python environment installation configuration;
+ 4. Java environment installation configuration;
+
+
+7.1工作日志
+  今天上午我们分开进行了最后的环境配置工作，但是安装虚拟机与配置虚拟机网络环境着实给我带来了不小的麻烦；在虚拟机安装过程中，
+我没有找到有效的ubuntu光盘，于是我选择了在百度上寻找另一个网站进行下载，在安装虚拟机时，由于没有进行有效操作，安装language
+pack花费了我很久时间，并且由于第一次安装失败，连续两次安装让我超过一个小时只好干着急；但好在最终终于克服了种种困难，完成了
+基础的环境与网络配置。
+   下午，我们一起在一个腾讯会议里解决了各个成员的配置遗留问题，其次再次明确了各个成员的所负责项目，而我的项目是ARIMA数据建模；
+这个下午，我对AR模型、VAR模型、ARMA模型与ARIMA模型进行了基础的了解，对白噪声以及去噪等有了基本的了解，相信明天我可以对ARIMA
+模型拥有一个基本的了解，从而做得更好。
+
+
+7.2工作日志
+   今天上午我们进行了小组汇报，听取了其他小组的工作进度，我们感觉到了自己工作进度的滞后，感觉有一丝紧张与焦虑；下午听完老师的
+讲解后，我们对这个总体项目之间的连接有了比较完整与正确的理解：通过在虚拟机上运行spark对庞大的数据进行清洗，剔除不需要的数据；
+然后通过python进行ARIMA建模，拟合出一条可以通过检验的曲线，来实现对未来天气的预测；随后把VSC文件转换成Json数据文件，以此来传
+输给flask，flask再把数据传给Java，实现在前端的展示。
+    今天的剩余时间，我再次深度学习了ARIMA模型，学习了怎样判断ARIMA中的三个参数：p、d、q；略微学习了对模型怎样残差检验来判断其
+正确性；今晚以及明天，我将对我初步做出的模型做出一些更正，如果进度顺利的话，明天我应该就可以从做清洗的同学手里拿到数据，来实现对数
+据的训练。
