@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天气预测登录界面</title>
+</head>
+<body>
+<h4>登录</h4>
+<form method="post">
+    <label>用户名:</label><input type="text" name="username"><br>
+    <label>密码:</label><input type="password" name="password"><br>
+    <input type="submit" value="提交"><br>
+
+    {% for message in get_flashed_messages()%}
+        {{message}}
+    {% endfor %}
+</form>
+</body>
+</html>
