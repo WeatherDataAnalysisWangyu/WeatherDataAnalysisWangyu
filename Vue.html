@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script>
+       /*  var name = prompt('请输入您的姓名')
+        var sex = prompt('请输入您的性别')
+        var age = prompt('请输入您的年龄')
+        alert('您的姓名是'+name/n+'您的性别是'+sex/n+'您的年龄是'+age+'岁')  */
+
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>当前计数：{{count}}</h2>
+        <button @click="add">+</button>
+        <button @click="sub">-</button>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                add: function () {
+                    this.count++
+                },
+                sub: function () {
+                    this.count--
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
