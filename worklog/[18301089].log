@@ -58,4 +58,13 @@
 学习Vue+Element
 7.9 下午
 使用Elment制作用户管理界面实现增删改查
-
+7.10 上午
+下载node.js环境
+配置node.js和npm环境变量
+配置cnpm
+使用vue-cli脚手架搭建vue开发环境
+使用webpack打包工具，启动vue项目
+正常运行cmd无法安装node.js，cnpm,需要使用管理员身份运行
+7.10 下午
+下载echarts.js和jquery.js
+尝试根据json文件动态生成echarts折线图
