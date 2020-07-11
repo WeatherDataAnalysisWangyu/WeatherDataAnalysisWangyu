@@ -67,4 +67,8 @@
 正常运行cmd无法安装node.js，cnpm,需要使用管理员身份运行
 7.10 下午
 下载echarts.js和jquery.js
-尝试根据json文件动态生成echarts折线图
+试根据json文件动态生成echarts折线图
+7.11 上午
+小组成员开组会一起实现前后端连接
+7.12 下午
+处理连接后出现的各种bug
