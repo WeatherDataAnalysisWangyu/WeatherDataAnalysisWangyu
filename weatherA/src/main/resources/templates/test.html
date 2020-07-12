@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气预测系统</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+</head>
+<style>
+    .text {
+        text-align: center;
+    }
+
+    body {
+        /*background-image: url("../static/images/background.png");*/
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<style>
+    .nav a {
+        display: inline-block;
+        width: 150px;
+        height: 108px;
+        background-color: pink;
+        text-align:center;
+        line-height: 58px;
+        color: yellow;
+        text-decoration: none;
+
+    }
+</style>
+
+<body>
+    <div class="text">
+        <h1>基于时间序列的天气预测分析系统</h1>
+    </div>
+    <hr>
+    <br>
+    请选择你要预测的省份
+    <select name="citySelect" id="citySelector">
+        <option value="null">--请选择省份--</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="guangdong">广州</option>
+        <option value="shenzhen">深圳</option>
+    </select><br>
+    <br>
+    请选择想要预测的日期
+    <select>
+        <option>--请选择年--</option>
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>        
+
+    </select>
+    <select name="monthSelect" id="monthSelector">
+        <option value="0">--请选择月--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <select name="daySelect" id="daySelector">
+        <option value="0">--请选择日--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+    </select>
+    <button onclick="send()">预测 </button>
+    <br>
+    <br>
+    <div class="nav">
+        <a href="#">7月13日温度23~27℃</a>&nbsp&nbsp&nbsp&nbsp
+        <a href="#">7月14日温度22~29℃</a>&nbsp&nbsp&nbsp&nbsp
+        <a href="#">7月15日温度18~23℃</a>&nbsp&nbsp&nbsp&nbsp
+        <a href="#">7月16日温度19~25℃</a>&nbsp&nbsp&nbsp&nbsp
+        <a href="#">7月17日温度22~28℃</a>&nbsp&nbsp&nbsp&nbsp
+        <a href="#">7月18日温度25~31℃</a>&nbsp&nbsp&nbsp&nbsp
+        <a href="#">7月19日温度24~32℃</a>&nbsp&nbsp&nbsp&nbsp
+    </div>
+
+    <script>
+        axios.defaults.baseURL = "http://localhost:8080";
+
+        function send(){
+            var cityName = $("#citySelector option:selected").text();
+            var monthName = $("#monthSelector option:selected").text();
+            var dayName = $("#daySelector option:selected").text();
+            console.log(cityName + monthName + dayName);
+            var objects= {"city":cityName, "month":monthName,"day":dayName};
+            axios({
+
+                method: 'post',
+
+                url: '/targetAdd',
+
+                data:objects
+
+            });
+        //
+         }
+
+
+
+
+    </script>
+</body>
+
+</html>

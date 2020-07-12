@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天气预测系统</title>
+  <script src="../static/js/echarts.min.js"></script>
+  <script src="../static/json/tmax-record.json"></script>
+  <script src="../static/json/tmin-record.json"></script>
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script src="http://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+</head>
+<style>
+  .text {
+    text-align: center;
+  }
+
+  body {
+    background-image: url("../static/img/back.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+<style>
+  .nav a {
+    display: inline-block;
+    width: 150px;
+    height: 108px;
+    background-color: pink;
+    text-align:center;
+    line-height: 58px;
+    color: yellow;
+    text-decoration: none;
+
+  }
+</style>
+
+<body>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<div class="text">
+  <h1>基于时间序列的天气预测分析系统</h1>
+</div>
+
+<br>
+<p style="text-align:center"> 请选择你要预测的省份
+  <select name="citySelect" id="citySelector">
+    <option value="null">--请选择省份--</option>
+    <option value="beijing">北京</option>
+    <option value="guangdong">广州</option>
+    <option value="huhehaote">呼和浩特</option>
+    <option value="shijiazhuang">石家庄</option>
+    <option value="guiyang">贵阳</option>
+    <option value="haikou">海口</option>
+    <option value="wuhan">武汉</option>
+    <option value="xining">西宁</option>
+    <option value="hefei">合肥</option>
+    <option value="kunming">昆明</option>
+    <option value="nanjing">南京</option>
+    <option value="lasa">拉萨</option>
+    <option value="shenyang">沈阳</option>
+    <option value="changchun">长春</option>
+    <option value="haerbin">哈尔滨</option>
+    <option value="fuzhou">福州</option>
+    <option value="taiyuan">太原</option>
+    <option value="nanning">南宁</option>
+    <option value="yinchuan">银川</option>
+    <option value="jinan">济南</option>
+    <option value="nanchang">南昌</option>
+    <option value="hangzhou">杭州</option>
+    <option value="zhengzhou">郑州</option>
+    <option value="hefei">合肥</option>
+  </select><br>
+</p>
+<p style="text-align:center">
+  <br>
+  请选择想要预测的日期
+<!--  <select>-->
+<!--    <option>&#45;&#45;请选择年&#45;&#45;</option>-->
+<!--    <option>2020</option>-->
+<!--    <option>2019</option>-->
+<!--    <option>2018</option>-->
+<!--    <option>2017</option>-->
+<!--    <option>2016</option>-->
+<!--    <option>2015</option>-->
+<!--    <option>2014</option>-->
+<!--    <option>2013</option>-->
+<!--  </select>-->
+  <select name="monthSelect" id="monthSelector">
+    <option value="0">--请选择月--</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+  </select>
+  <select name="daySelect" id="daySelector">
+    <option value="0">--请选择日--</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+  </select>
+  <button onclick="send()">预测 </button>
+</p>
+
+
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 1000px;height:800px;"></div>
+<script>
+
+  function yuge(){
+    //echarts进行初始化
+    var myChart = echarts.init(document.getElementById("main"));
+    myChart.setOption({
+      //图标题
+      title:{text: ''},
+      // animation:false,
+      //图提示框
+      tootip:{},
+      //图例
+      legend: {
+        name:"",
+        orient: 'vertical',
+        x:'right',      //可设定图例在左、右、居中
+        y:'center',     //可设定图例在上、下、居中
+        padding:[0,50,0,0],   //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
+        data: ['直接访问','微信','百度','其他文章','网页']
+      },
+      grid: {
+        x:450,
+        y:30,
+        x2:0,
+        y2:450
+      },
+      //x轴属性
+      xAxis:{
+        data:[]
+      },
+      //y轴属性
+      yAxis:{},
+      //图属性
+      series:[
+        {
+          name:'最低温',
+          type:'line',//图类型：柱状图
+          color:['#0000ff'],//设置图像颜色
+          data:[]//图表的数值
+        },
+        {
+          name:'最高温',
+          type:'line',//图类型：柱状图
+          color:['#ff0000'],//设置图像颜色
+          data:[]//图表的数值
+        }
+      ]
+    });
+
+    $.get('../static/json/tmin-record.json').done(function(data1){
+      myChart.setOption(
+              {
+                xAxis:{
+                  data:data1.date
+                },
+                series:
+                        {
+                          name:'最低温',
+                          data:data1.temperature
+                        }
+              }
+
+      );
+
+    });
+    $.get('../static/json/tmax-record.json').done(function(data1){
+      myChart.setOption(
+              {
+                xAxis:{
+                  data:data1.date
+                },
+                series:
+                        {
+                          name:'最高温',
+                          data:data1.temperature
+                        }
+              }
+
+      );
+
+    });
+
+
+  }
+
+
+  $(document).ready(yuge());
+
+  setInterval("yuge()","35000");
+
+  axios.defaults.baseURL = "http://localhost:8080";
+
+  function send(){
+    var cityName = $("#citySelector option:selected").text();
+    var monthName = $("#monthSelector option:selected").text();
+    var dayName = $("#daySelector option:selected").text();
+    console.log(cityName + monthName + dayName);
+    var objects= {"city":cityName, "month":monthName,"day":dayName};
+    axios({
+
+      method: 'post',
+
+      url: '/targetAdd',
+
+      data:objects
+
+    });
+    //
+  }
+
+
+
+</script>
+</body>
+
+</html>
