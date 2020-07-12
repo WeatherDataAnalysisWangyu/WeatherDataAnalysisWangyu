@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/css/register.css">
+    <link rel="icon" href="../static/img/project_logo.png">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/axios/0.19.0/axios.js"></script>
+    <title>注册-天气数据展示系统</title>
+
+</head>
+
+<body>
+<div class="header">
+    <p class="headerTitle">天气数据一周预测</p>
+    <div class="headerNav">
+        <a href="index.html" target="_blank">用户管理系统</a>
+    </div>
+</div>
+
+    <section class="content" id="mainSection">
+        <header class="content-tit">
+            <h1>欢迎使用天气数据展示与预测平台，这里能带给你船新的体验和不一样的感觉</h1>
+        </header>
+        <style>
+            .regForm-item-tit {
+                width: 90px
+            }
+            
+            .regForm-item-ct {
+                padding-left: 110px
+            }
+            
+            .vCodeArea-big .switchvCode {
+                left: 325px
+            }
+        </style>
+
+        <div id="mMaskD" class="mainBody-wp">
+            <form action="/leileleile">
+                <div class="m-mask" style="display: none"></div>
+                <div class="mainBody">
+                    <div id="regMain" class="regForm">
+                        <dl id="nameDl1" class="regForm-item mainBody-hasFocus-focusArea">
+                            <dt class="regForm-item-tit">
+                                <span class="txt-impt">*</span>
+                                用户名
+                            </dt>
+                            <dd class="regForm-item-ct"><input id="username" placeholder="请输入用户名" name="name" type="text" class="ipt" style="ime-mode:disabled;color:#999;" autocomplete="off" value=""></dd>
+                            <p style="color: #cc0000" th:if="${not #strings.isEmpty(msg)}" th:text="${msg}"></p >
+                        </dl>
+
+                        <dl id="mainPwdDl" class="regForm-item">
+                            <dt class="regForm-item-tit">
+                                <span class="txt-impt">*</span>
+                                密码
+                            </dt>
+                            <dd class="regForm-item-ct">
+                                <input id="password1" placeholder="请输入密码" name="Password" type="password" class="ipt norWidthIpt" style="ime-mode:disabled">
+                                <div id="mainPwdTips" class="tips" style="position:relative">
+                                    <div id="mainPwdStatus" class="pswState pswState-poor" style="display:none;">
+                                        <span class="s1">弱</span>
+                                        <span class="s2">中等</span>
+                                        <span class="s3">强</span>
+                                    </div>
+<!--                                    <span class="txt-tips">6~16个字符，区分大小写</span>-->
+                                </div>
+                            </dd>
+                        </dl>
+
+                        <dl id="mainCfmPwdDl" class="regForm-item">
+                            <dt class="regForm-item-tit">
+                                <span class="txt-impt">*</span>
+                                确认密码
+                            </dt>
+                            <dd class="regForm-item-ct"><input id="password2" placeholder="请再次填写密码" name="mainPassword" type="password" class="ipt norWidthIpt" style="ime-mode:disabled"></dd>
+                            <p style="color: #cc0000" th:if="${not #strings.isEmpty(msg1)}" th:text="${msg1}"></p >
+                        </dl>
+
+                        <dl id="nameDl2" class="regForm-item mainBody-hasFocus-focusArea">
+                            <dt class="regForm-item-tit">
+                                <span class="txt-impt">*</span>
+                                邮箱地址
+                            </dt>
+                            <dd class="regForm-item-ct"><input id="emailName" placeholder="请输入有效邮箱地址" name="email" type="text" class="ipt" style="ime-mode:disabled;color:#999;" autocomplete="off" value="" ></dd>
+                        </dl>
+                        <dl id="vcodeDl" class="regForm-item vCodeArae">
+                            <dt class="regForm-item-tit"><span class="txt-impt">*</span>验证码</dt>
+                            <dd class="regForm-item-ct">
+                                <input id="emailVertify" name="vcode" type="text" class="ipt" placeholder="请输入邮箱验证码" autocomplete="off">
+                            </dd>
+                        </dl>
+                        <dl class="regForm-item">
+                            <dd class="regForm-item-ct" style="text-align: left">
+<!--                                <button id="mainRegA" onclick="send()" class="btnReg" style="background-image: none; background-color:rgb(43,205, 216); width: 200px;">立即注册</button>-->
+                                <input type="submit" value="立即注册">
+                            </dd>
+                        </dl>
+                    </div>
+
+                <aside class="mainBody-side">
+                    <div class="regExt" id="adds">
+                        <img src="../static/img/surfing.png" alt="啊！网速不行啊！">
+                    </div>
+                </aside>
+                <div class="clear"></div>
+            </div>
+            </form>
+        </div>
+    </section>
+
+<div id="footer" class="m-footer">
+    <div class="footer-main">
+        <div class="footer-nav">
+            <a href="https://www.runoob.com" target="_blank" >HTML学习</a>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+       // axios.defaults.baseURL = "http://localhost:8080";
+
+        function send(){
+            var username = $('input[name="name"]').val();
+            var password = $('input[name="mainPassword"]').val();
+            var email = $('input[name="email"]').val();
+            var objects= {"username":username, "password":password,"email":email};
+            axios({
+
+                method: 'post',
+
+                url: '/leileleile',
+
+                data:objects
+
+            });
+            //
+        }
+
+    </script>
+
+</body>
+
+</html>
