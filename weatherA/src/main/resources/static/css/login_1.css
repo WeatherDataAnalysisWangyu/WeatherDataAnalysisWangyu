@@ -1,0 +1,231 @@
+.btns {
+  width:150px;
+  height:74px;
+  margin:0 auto;
+  /*background-color:blue;*/
+  background-image:url("../images/btn1.png");
+  /*background:url("../images/btn.png") no-repeat left top;*/
+  /*color:#FFF;*/
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.login {
+    width: 400px;
+}
+.g-bd {
+    width: 400px;
+    height: 306px;
+    padding-bottom: 36px;
+    overflow: visible;
+}
+.w-exception-normal .cnt .note {
+    font-size: 18px;
+}
+.m-cnt {
+    padding: 0 30px;
+    width: 340px;
+}
+.headimg {
+    display: none;
+}
+.m-header {
+    padding: 0;
+    height: 32px;
+    margin: 0;
+}
+.fur-change-email {
+    height: 22px;
+    line-height: 22px;
+    font-size: 0;
+}
+.m-cnt .m-nerror .ferrortail, .m-cnt .m-nerror .ferrortail2, .m-cnt .m-nerror .ferrortail3 {
+    width: 16px !important;
+    height: 16px !important;
+    background: url("https://mimg.127.net/p/freemail/index/lib/img/urs/ico-error.png") no-repeat !important;
+}
+.u-loginbtn {
+    background: #3B78DD;
+    border-radius: 4px;
+}
+.u-loginbtn:hover {
+    background: #1760D7;
+}
+.u-loginbtn:active {
+    color: white;
+    background: #1760D7;
+}
+.w-exception, .w-exception-normal {
+    width: 400px;
+}
+.w-exception .cnt {
+    width: 340px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.w-exception-normal .cnt {
+    width: 340px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+input::-webkit-input-placeholder {
+    color: #DBDBDB;
+}
+input:-moz-placeholder {
+    color: #DBDBDB;
+}
+ .m-cnt .m-unlogin .b-unlogn {
+    float: left;
+    border-right: none;
+    width: 110px;
+}
+.m-cnt .m-unlogin .b-unlogn label {
+    font-size: 14px;
+    color: #999;
+    line-height: 18px;
+}
+.m-cnt .m-nerror {
+    margin-top: 8px;
+}
+.m-cnt .m-nerror .ferrorhead {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #CC0000;
+    line-height: 18px;
+    margin-top: -1px;
+}
+.m-cnt .u-input input {
+    height: 46px;
+    line-height: 46px;
+}
+.m-cnt .u-logo div {
+    margin-top: 12px;
+}
+
+.m-cnt .u-logo .u-logo-img1 {
+    background-image: url("../images/login.png");
+    background-repeat: no-repeat;
+}
+.m-cnt .u-logo .u-logo-img2 {
+    background-image: url("../images/passwd.png");
+    background-repeat: no-repeat;
+}
+.m-cnt .m-unlogin .b-unlogn .u-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #D0D0D0;
+    border-radius: 2px;
+}
+.m-cnt .m-unlogin .b-unlogn .u-checkbox-select {
+    width: 16px;
+    height: 16px;
+    background: url("https://mimg.127.net/p/freemail/index/lib/img/urs/ico-checked.png") no-repeat;
+}
+.m-cnt #login-form .m-ckcnt {
+    margin-top: 22px;
+}
+
+ .loginbox {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.loginbox .u-loginbtn {
+    position: absolute;
+    bottom: 244px;
+    width: 340px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border: none;
+    /* margin-bottom: 36px; */
+}
+.m-cnt .m-unlogin {
+    padding-bottom: 42px;
+    font-size: 0;
+    height: 16px;
+    line-height: 16px;
+}
+ .m-cnt .m-unlogin .forgetpwd {
+    float: right;
+    color: #3B78DD;
+    font-size: 14px;
+}
+ .m-cnt .m-unlogin .u-regbtn.bgcolor {
+    position: absolute;
+    left: 168px;
+    bottom: 210px;
+    color: #3B78DD;
+    font-size: 14px;
+    line-height: 20px;
+}
+.m-cnt .m-unlogin .u-regbtn.bgcolor:hover {
+    color: #1760D7 !important;
+}
+.m-cnt .m-unlogin .u-regbtn.bgcolor:active {
+    color: #1760D7;
+}
+.m-cnt .inputbox {
+    border-color: #DADADA;
+    height: 46px;
+}
+.m-cnt .inputbox.active {
+    border-color: #3B78DD;
+}
+ .m-cnt .m-unlogin .forgetpwd:hover {
+    color: #1760D7;
+}
+.m-cnt .m-unlogin .forgetpwd:active {
+    color: #1760D7;
+}
+.m-cnt .pr-domain {
+    color: #666;
+    /* right: -80px !important; */
+}
+
+ .u-btn.bgcolor {
+    height: 44px;
+    line-height: 44px;
+    color: #3B78DD;
+    border: 1px solid #a7d4bd;
+    border-radius: 4px;
+    background: #E6F3EC;
+}
+.u-btn.bgcolor:hover {
+    background: #cee7da;
+}
+.u-btn.bgcolor:active {
+    background: #daede3;
+}
+ .btncolor {
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: #3B78DD;
+}
+.btncolor:hover {
+    background: #1760D7;
+}
+.btncolor:active {
+    background: #1760D7;
+}
+
+.username{
+    background-image: url('../images/login.png');
+    background-size: 25px 25px;
+    background-position: 300px 12px;
+    background-repeat: no-repeat;
+    border-width: 1px;
+    border-style:groove;
+    padding-left: 10px;
+}
+
+.passwd{
+    background-image: url('../images/passwd.png');
+    background-size: 25px 25px;
+    background-position: 300px 12px;
+    background-repeat: no-repeat;
+    border-width: 1px;
+    border-style: groove;
+    padding-left: 10px;
+}

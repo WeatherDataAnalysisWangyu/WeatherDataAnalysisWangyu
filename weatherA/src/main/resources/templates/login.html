@@ -1,0 +1,147 @@
+<!--&lt;!&ndash;&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<html lang="en">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<head>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <title>首页</title>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</head>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<body>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h1>首页</h1>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</body>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</html>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>登录</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<div style="margin: 15% 40%;">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h1>天气查询！</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;    <form th:action="@{/search}" >&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="id_username">城市名  ：</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" id="id_username" name="userName" placeholder="城市名" autofocus required />&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <label for="id_password">查询日期：</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="text" id="id_password" name="password" placeholder="查询日期"  autofocus required />&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="submit" value="确定" >&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <button type="button" onclick="post()" class="btn btn-success btn-publish" >查询</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<script type="text/javascript">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    function post() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        // var obj={"username":document.getElementById("id_username").innerHTML,"password":document.getElementById("id_password").innerHTML};&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        // $.ajax({&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        //     url :"/search",&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        //     contentType: 'application/json',&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        //     data:JSON.stringify(obj),&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        //     success:function (response) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        //         console.log(response);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        //     }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        // });&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        // console.log(obj.userName)&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        // console.log(obj.password)&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh-CN">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>天气预测系统</title>-->
+<!--    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
+<!--    <script src="http://cdn.bootcss.com/axios/0.19.0/axios.js"></script>-->
+<!--</head>-->
+<!--<style>-->
+<!--    body {-->
+<!--        background-image: url("../static/img/back.jpg");-->
+<!--        background-repeat: no-repeat;-->
+<!--        background-position: center center;-->
+<!--        background-attachment: fixed;-->
+<!--        background-size: cover;-->
+<!--    }-->
+<!--</style>-->
+
+<!--<body>-->
+<!--<h4>天气预测系统登录</h4>-->
+<!--<form width="500" action="/search">-->
+<!--    <tr>-->
+<!--        <td>用户名：<input id="id_username" name="username" type="text"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>密码：<input id="id_password" name="password" type="password"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <input type="submit" value="确定" >-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</form>-->
+
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;    axios.defaults.baseURL = "http://localhost:8080";&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function send(){&ndash;&gt;-->
+<!--&lt;!&ndash;        // var userName = document.getElementById("id_username").innerText;&ndash;&gt;-->
+<!--&lt;!&ndash;        var userName = document.getElementById("id_username").innerText;&ndash;&gt;-->
+<!--&lt;!&ndash;        //var password = document.getElementById("id_password").innerText;&ndash;&gt;-->
+<!--&lt;!&ndash;        var password = document.getElementById("id_password").value;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        var objects= {"username":userName, "password":password};&ndash;&gt;-->
+<!--&lt;!&ndash;        console.log(userName,password);&ndash;&gt;-->
+<!--&lt;!&ndash;        axios({&ndash;&gt;-->
+
+<!--&lt;!&ndash;            method: 'post',&ndash;&gt;-->
+
+<!--&lt;!&ndash;            url: '/search',&ndash;&gt;-->
+
+<!--&lt;!&ndash;            data:objects&ndash;&gt;-->
+
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+<!--&lt;!&ndash;        //&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

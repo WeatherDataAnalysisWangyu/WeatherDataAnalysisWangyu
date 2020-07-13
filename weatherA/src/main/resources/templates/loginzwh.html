@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Web">
+    <meta name="keywords" content="天气 预测 数据">
+    <link rel="stylesheet" type="text/css" href="../static/css/login_1.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/login_2.css">
+    <link rel="icon" href="../static/img/project_logo.png">
+    <title>登陆-天气数据展示系统</title>
+</head>
+
+<body>
+<div class="header">
+    <p class="headerTitle">天气数据一周预测</p >
+    <div class="headerNav">
+        <a href="index" target="_blank">用户管理系统</a>
+    </div>
+
+</div>
+    <div class="main" id="mainBg" style="background-color: rgb(43, 205, 216);">
+        <div class="main-inner" id="mainCut">
+            <div class="main-inner-wrap">
+                <div class="theme">
+                    <img src="../static/img/2.png" style="width:400px;height:400px;position:absolute;left:100px;top:200px;">
+                </div>
+                <div id="loginBlock" class="login tab-2">
+                    <div id="normalLoginTab" class="loginForm">
+                        <h2 class="loginbox-title">天气数据展示及预测平台</h2>
+                        <div class="loginWrap">
+                            <div id="loginDiv" class="loginUrs">
+                                <div style="width: 100%; height: 100%; border: none; background: none;">
+                                    <div class="g-bd cnt-box-include" id="cnt-box-parent">
+                                        <div class="g-bd" id="cnt-box">
+                                            <div class="m-header">
+                                                <div class="u-closebtn u-closebtn1" data-action="doclose"></div>
+                                                <div class="headimg j-headimg"></div>
+                                            </div>
+                                            <div class="m-cnt">
+                                                <form id="login-form" action="/canilogin">
+                                                    <div class="m-container">
+                                                        <div class="inputbox" id="account-box">
+                                                            <div class="u-input box">
+
+                                                                <p style="color: #cc0000" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p >
+
+                                                                <label class="u-label f-dn" style="display: none">用户名或邮箱账号</label>
+                                                                <input type="text" data-placeholder="用户名或邮箱账号" id="username" name="account" data-type="email" data-loginname="login" data-required="true" class="username" placeholder="用户名或邮箱账号" style="width:340px">
+                                                            </div>
+                                                            <div class="fur-change-email"></div>
+                                                            <div class="inputbox">
+                                                                <div class="u-input box">
+                                                                    <label class="u-label f-dn" style="display: block"></label>
+                                                                    <input data-placeholder="输入密码" id="password" name="password" maxlength="50" data-required="true" class="passwd" type="password" autocomplete="new-password" data-max-length="50" tabindex="2" spellcheck="false" placeholder="输入密码" style="width:340px">
+                                                                </div>
+                                                            </div>
+                                                            <div class="f-cb loginbox">
+<!--                                                                <button type="submit" id="dologin" data-action="dologin" class="u-loginbtn btncolor tabfocus btndisabled" tabindex="8" style="text-align:center">登&nbsp;&nbsp;录</button>-->
+                                                                <input type="submit" name="submit" value="登录" class="u-loginbtn btncolor tabfocus btndisabled" style="text-align:center">
+                                                            </div>
+                                                            <div class="m-unlogin">
+                                                                <a id="changepage" class="u-regbtn bgcolor tabfocus j-redirect" href="/register" tabindex="11">注册新帐号</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mailApp">
+                            <a class="mailApp-logo" id="mailAppLogo"  target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="m-footer">
+        <div class="footer-main">
+            <div class="footer-nav">
+                <a href="https://www.runoob.com" target="_blank" >程序猿从入门到入土</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
